@@ -1,0 +1,238 @@
+/* ================== navbar ==================*/
+.navbar {
+    position: fixed;
+    width: 100%;
+    background-color: #292b2c;
+    display: flex;
+    flex-direction: row;
+    height: 7vh;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.navbar a:hover {
+    color: #5cb85c;
+    text-decoration: underline;
+
+}
+
+.navbar .logo {
+    margin-left: 5rem;
+    letter-spacing: .1rem;
+    color: white;
+}
+
+.nav-links {
+    margin-right: 5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logout:hover {
+    color: #d9534f !important;
+}
+
+.user-photo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    margin-right: .3rem;
+}
+
+.user {
+    margin-right: 1rem;
+    color: white;
+    letter-spacing: .1rem;
+    font-size: .9rem;
+}
+
+
+/*================== navbar-dropdown============== */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    padding: 4px 5px;
+    display: none;
+    position: absolute;
+    background-color: #f7f7f7;
+    min-width: 224px;
+    min-height: auto;
+    overflow: auto;
+    right: 10px;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    z-index: 1;
+    top: 36px;
+}
+
+
+.dropdown-content p {
+    font-size: 13px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    right: 0;
+}
+
+.show {
+    display: block;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: .5rem;
+}
+
+.user-profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    margin-bottom: .4rem;
+}
+
+.user-profile p {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.user-profile .email {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.user-profile a {
+    font-size: 14px;
+    color: green;
+}
+
+.user-profile a:hover {
+    font-size: 14px;
+    color: green !important;
+    text-decoration: underline;
+}
+
+.login {
+    color: #5cb85c;
+    margin-right: 2rem;
+}
+
+
+.register {
+    color: #f0ad4e;
+}
+
+.register:hover {
+    color: #f0ad4e !important;
+}
+
+
+/* ==============fotter============= */
+.footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #292b2c;
+    color: white;
+    margin-top: auto;
+}
+
+.footer-content {
+    width: 95%;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.home-card {
+    width: 35%;
+    margin-right: 5rem;
+}
+
+.footer-title {
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    word-spacing: .1rem;
+    font-weight: 100;
+    margin-bottom: 1.5rem;
+}
+
+.home-card p {
+    font-size: .95rem;
+    word-spacing: .1rem;
+}
+
+.help-card {
+    width: 10%;
+    margin-right: 5rem;
+}
+
+.footer-link {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-link a {
+    margin-bottom: 1rem;
+    font-size: .95rem;
+    word-spacing: .1rem;
+}
+
+.useful-card {
+    width: 10%;
+    margin-right: 5rem;
+}
+
+.contact-card {
+    width: 20%;
+}
+
+.contact-card p {
+    font-size: .95rem;
+    word-spacing: .1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card p .fa{
+    margin-right: 1rem;
+}
+
+.social-link {
+    margin-right: .5rem;
+}
+
+.footer a:hover {
+    color: #5cb85c;
+}
+
+#copyright {
+    width: 100%;
+    background-color: #1c1d1d;
+    color: white;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+#copyright p{
+    font-size: .95rem;
+    letter-spacing: .05rem;
+    word-spacing: .1rem;
+}
