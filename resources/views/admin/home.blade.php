@@ -44,6 +44,8 @@
         @if($item->food_type == 'featured')
         <div class="product">
             <img src="{{url($item->food_photo_path)}}" alt="food-image" width="200" height="200">
+            <!-- <img src="/images/featured/fbakery.jpg" alt="food-image" width="200" height="200"> -->
+
             <h3>{{$item->food_name}}</h3>
             <p>{{ $item->food_description }}</p>
             <p> <b>NRs. {{ $item->food_price }}</b> </p>
@@ -68,7 +70,6 @@
         @endif
         @endforeach
     </div>
-
 </body>
 
 </html>

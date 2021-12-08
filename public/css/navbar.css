@@ -14,9 +14,8 @@
 }
 
 .navbar a:hover {
-    color: #5cb85c;
+    color: #5cb85c; 
     text-decoration: underline;
-
 }
 
 .navbar .logo {

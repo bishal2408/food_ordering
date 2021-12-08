@@ -49,6 +49,7 @@ Home page
         @endforeach
     </div>
 </div>
+
 <div class="about">
     <div class="aboutimage-wrap">
         <img src="{{ url('images/about-image.jpeg') }}" class="about-image">
@@ -64,5 +65,4 @@ Home page
         <button class="btn aboutbtn">Learn more</button>
     </div>
 </div>
-
 @endsection

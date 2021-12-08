@@ -9,7 +9,7 @@ body {
 }
 /*===================== below navbar image css ======================*/
 
-.image-wrap {
+.image-wrap { 
     width: 100%;
     position: relative;
 }
@@ -151,5 +151,3 @@ body {
     margin-top: 1rem;
     margin-bottom: .6rem;
 }
-
-
