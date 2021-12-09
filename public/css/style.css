@@ -151,3 +151,71 @@ body {
     margin-top: 1rem;
     margin-bottom: .6rem;
 }
+
+/* -------------------------- MYBAG DESIGN----------------------------- */
+
+.mybag {
+    margin: 3rem 3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.mybag .mybag-orders h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2rem;
+    margin-bottom: 1.9rem;
+}
+
+.mybag-orders {
+    width: 55%;
+    margin-right: 7rem;
+}
+
+.mybag-orders table{
+    width: 100%;
+    border: rgb(218, 208, 208) solid 1px;
+    margin-bottom: .7rem;
+}
+.mybag-orders table tr:nth-child(even) {
+    background: rgb(240, 228, 228)
+}
+
+.mybag-orders table .table-data:hover{
+    font-weight: 400;
+    color: green;
+}
+
+.mybag-orders a .add-item{
+    margin-bottom: 1rem;
+    float: right;
+    color: green;
+    font-size: .95rem;
+    font-weight: bold;
+}
+
+.mybag-orders a .add-item:hover{
+    color: #5cb85c;
+    text-decoration: underline;
+}
+
+
+.mybag-bill{
+    text-align: center;
+    width: 30%;
+    border: rgb(224, 218, 218) 1px solid;
+    padding: 10px;
+    box-shadow: 2px 2px 5px grey;
+}
+
+.mybag-bill p{
+    font-size: 1rem;
+    font-weight: 600;
+    color: green;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.mybag-bill table{
+    width: 100%;
+}

@@ -32,3 +32,46 @@
     background-color: black;
     color: white;
 }
+
+.edit-btn {
+    width: 40%;
+    background-color: white;
+    color: #0275d8;
+    border: 1px solid #0275d8;
+    font-weight: 500;
+    transition: 200ms;
+}
+
+.edit-btn:hover{
+    text-decoration: underline;
+}
+
+.delete-btn{
+    width: 40%;
+    background-color: white;
+    color: #d9534f;
+    border: 1px solid #d9534f;
+    font-weight: 500;
+    transition: 200ms;
+}
+
+.delete-btn:hover{
+    text-decoration: underline;
+}
+
+.checkout-btn {
+    width: 70%;
+    margin: 10px 10px 10px 25px;
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    font-weight: 500;
+    transition: 200ms;
+}
+
+.checkout-btn:hover{
+    color: white;
+    background-color: rgb(37, 100, 37);
+    border: #5cb85c 1px solid;
+    text-decoration: underline;
+}
