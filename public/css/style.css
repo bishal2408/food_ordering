@@ -203,6 +203,7 @@ body {
 .mybag-bill{
     text-align: center;
     width: 30%;
+    height: fit-content;
     border: rgb(224, 218, 218) 1px solid;
     padding: 10px;
     box-shadow: 2px 2px 5px grey;
@@ -272,4 +273,45 @@ body {
     width: 100%;
     display: flex;
     flex-direction: row;
+}
+
+.bill{
+    height: fit-content;
+    width: 27%;
+    padding: 1rem;
+    margin-left: 5rem;
+    border: 1px solid rgb(212, 209, 209);
+    box-shadow: 2px 2px 2px grey;
+}
+
+.check-orders .title, .check-bill .title {
+    font-size: 15px;
+    color: green;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.check-orders table, .check-bill table{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.check-orders table tr, .check-bill table tr{
+    height: 2rem;
+    font-size: 15px;
+
+}
+
+.check-orders table tr:hover {
+    color: green;
+}
+.check-orders td i{
+    color: red;
+}
+
+.check-bill .message {
+    font-size: 12px;
+    text-align: justify;
+    color: rgb(160, 155, 155);
 }

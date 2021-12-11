@@ -46,10 +46,12 @@ Route::middleware('auth')->prefix('order')->group(function () {
     Route::get('/delete/{id}', [OrderController::class, 'destroy'])->name('order.delete');
 
 
-    Route::get('/checkout', [CheckoutController::class, 'create'])->name('order.checkoutform');
+    Route::get('/checkout/{user_id}', [CheckoutController::class, 'create'])->name('order.checkoutform');
     Route::POST('/checkoutStore/{user_id}', [CheckoutController::class, 'store'])->name('order.checkoutStore');
     Route::get('/orderlist/{user_id}', [CheckoutController::class, 'index'])->name('order.orderlist');
     Route::get('/cancle/order/{order_id}', [CheckoutController::class, 'destroy'])->name('order.cancelOrder');
+    Route::get('/delete/order/{id}', [CheckoutController::class,'delete'])->name('order.checkout_delete');
+
     
 });
 

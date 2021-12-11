@@ -25,9 +25,16 @@ class CheckoutController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($user_id)
     {
-        return view('order.checkoutform');
+        $orders = Order::all()->where('user_id', $user_id)->whereIn('on_order', 0);
+        $total = 0;
+        foreach ($orders as $order) {
+            $total = $total + $order->price * $order->quantity;
+        }
+        $vat = 0.03 * $total;
+        $delivery_fee = 50;
+        return view('order.checkoutform', compact('orders', 'total', 'vat', 'delivery_fee'));
     }
 
     /**
@@ -104,5 +111,12 @@ class CheckoutController extends Controller
         $checkout->delete();
         Order::destroy($order_id);
         return redirect()->route('order.orderlist',['user_id'=>$user_id]);
+    }
+
+    public function delete($id)
+    {
+        $order = Order::find($id);
+        $order->destroy($id);
+        return redirect()->route('order.checkoutform', ['user_id' => $order->user_id]);
     }
 }

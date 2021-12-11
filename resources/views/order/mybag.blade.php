@@ -53,7 +53,7 @@ order form
                 <td style="text-align: left; padding: 15px;">NRs. {{$total + $vat + $delivery_fee}}</td>
             </tr>
         </table>
-        <a href="{{ route('order.checkoutform') }}" ><button class="btn checkout-btn">Proceed to Checkout</button></a>
+        <a href="{{ route('order.checkoutform', ['user_id'=>Auth::user()->id] ) }}" ><button class="btn checkout-btn">Proceed to Checkout</button></a>
     </div>
 </div>
 

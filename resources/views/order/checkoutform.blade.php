@@ -35,7 +35,51 @@ order form
             </form>
         </div>
         <div class="bill">
-            this is bill
+            <div class="check-orders">
+                <p class="title">My bag</p>
+                <p class="title" style="color: black;">Your food items are listed below</p>
+                <table>
+                    @foreach ($orders as $order)
+                    <tr>
+                        <td>{{ $order->quantity }}x</td>
+                        <td> <b>{{ $order->food_name }}</b></td>
+                        <td>NRs.{{ $order->price * $order->quantity}}</td>
+                        <td>
+                            <a href="{{ route('order.checkout_delete',['id'=>$order->id]) }}">
+                                <button> <i class="fa fa-minus-circle"></i> </button>
+                            </a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+            <hr>
+            <div class="check-bill">
+                <p class="title">Your bill (estimated)</p>
+                <table>
+                    <tr>
+                        <td><b>SUB TOTAL</b></td>
+                        <td>NRs. {{ $total }}</td>
+                    </tr>
+                    <tr>
+                        <td><b>VAT</b></td>
+                        <td>NRs. {{ $vat }}</td>
+                    </tr>
+                    <tr>
+                        <td><b>DELIVERY CHARGE</b></td>
+                        <td>NRs. {{ $delivery_fee }}</td>
+                    </tr>
+                    <tr>
+                        <td><b>GRAND TOTAL</b></td>
+                        <td><b> NRs. {{$total + $vat + $delivery_fee}}</b></td>
+                    </tr>
+                </table>
+                <p class="message">
+                ( Note: In the event that the restaurant price and the price 
+                listed below are different, the restaurant price will 
+                prevail in every case.)
+            </p>
+            </div>
         </div>
     </div>
 
