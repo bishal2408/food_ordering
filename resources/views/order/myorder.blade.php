@@ -5,28 +5,27 @@ order form
 @endsection
 
 @section('content')
-<div class="orders-list">
-    <h3>Your Orders</h3>
-    <a href="{{ route('home') }}"> <button>Add items to bag? Click here!</button> </a>
-    <table style="width: 50%;">
+<div class="order-list">
+    <h3 class="order-heading">Your Orders</h3>
+    <hr style="margin-bottom: 15px;">
+    <a href="{{ route('home') }}" > <button class="add-item">Add items to bag? <span>Click here!</span> </button> </a>
+    <table>
         <tr>
-            <th style="text-align: left; padding: 8px;">Quantity</th>
-            <th style="text-align: left; padding: 8px;">Item</th>
-            <th style="text-align: left; padding: 8px;">Price per item</th>
-            <th style="text-align: left; padding: 8px;">Price</th>
-            <th style="text-align: left; padding: 8px;">Status</th>
-
-
+            <th>Quantity</th>
+            <th>Item</th>
+            <th>Price per item</th>
+            <th>Price</th>
+            <th>Status</th>
         </tr>
         @foreach($orders as $order)
-        <tr>
-            <td style="text-align: left; padding: 8px;">{{ $order->quantity }}x</td>
-            <td style="text-align: left; padding: 8px;">{{ $order->food_name }} </td>
-            <td style="text-align: left; padding: 8px;">{{ $order->price}}</td>
-            <td style="text-align: left; padding: 8px;">{{ $order->price * $order->quantity}}</td>
-            <td style="text-align: left; padding: 8px;">
-                <a href="#"><button>Onprocess</button></a>
-                <a href="{{ route('order.cancelOrder', ['order_id' => $order->id]) }}"><button>Cancel Order</button></a>
+        <tr class="table-data">
+            <td>{{ $order->quantity }}x</td>
+            <td>{{ $order->food_name }} </td>
+            <td>{{ $order->price}}</td>
+            <td>{{ $order->price * $order->quantity}}</td>
+            <td>
+                <a href="#" class="status"><button>Onprocess</button></a>
+                <a href="{{ route('order.cancelOrder', ['order_id' => $order->id]) }}"><button class="btn cancel-btn">Cancel Order</button></a>
             </td>
         </tr>
         @endforeach

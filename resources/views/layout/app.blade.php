@@ -66,8 +66,8 @@
     <div class="main-container">
         @yield('content')
     </div>
-    
-    
+
+
     <div class="footer">
         <div class="footer-content">
             <div class="home-card">
@@ -98,11 +98,11 @@
                 <p><i class="fa fa-home"> </i>Kathmandu, Nepal</p>
                 <p><i class="fa fa-phone"></i> 014201394, 9873792892</p>
                 <p><i class="fa fa-envelope"></i> info@gmail.com</p>
-                <p >
+                <p>
                     Contact us at:
-                   <a href=""> <i class="fa fa-facebook" style="margin-left: .5rem;"></i></a>
-                   <a href=""> <i class="fa fa-instagram"></i></a>
-                   <a href=""> <i class="fa fa-twitter"></i></a>
+                    <a href=""> <i class="fa fa-facebook" style="margin-left: .5rem;"></i></a>
+                    <a href=""> <i class="fa fa-instagram"></i></a>
+                    <a href=""> <i class="fa fa-twitter"></i></a>
                 </p>
             </div>
         </div>
@@ -112,5 +112,4 @@
     </div>
     <script src="{{ url('js/index.js') }}"></script>
 </body>
-
 </html>

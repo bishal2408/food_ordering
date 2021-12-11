@@ -7,9 +7,10 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+
 /*===================== below navbar image css ======================*/
 
-.image-wrap { 
+.image-wrap {
     width: 100%;
     position: relative;
 }
@@ -30,7 +31,7 @@ body {
     top: 41%;
 }
 
-.search-bar h3{
+.search-bar h3 {
     color: white;
     font-size: 1.4rem;
     word-spacing: .3rem;
@@ -61,7 +62,7 @@ body {
 }
 
 
-.food-container{
+.food-container {
     width: 80%;
     margin: auto;
     margin-top: 2rem;
@@ -98,7 +99,8 @@ body {
     width: 100%;
 }
 
-.product h3, p{
+.product h3,
+p {
     margin-top: .3rem;
     font-size: 1.1rem;
     padding-left: .5rem;
@@ -160,11 +162,13 @@ body {
     flex-direction: row;
 }
 
+
+
 .mybag .mybag-orders h3 {
     font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 1.2rem;
-    margin-bottom: 1.9rem;
+    letter-spacing: .1rem;
+    margin-bottom: 1rem;
+    color: #9F1D22;
 }
 
 .mybag-orders {
@@ -172,21 +176,22 @@ body {
     margin-right: 7rem;
 }
 
-.mybag-orders table{
+.mybag-orders table {
     width: 100%;
     border: rgb(218, 208, 208) solid 1px;
     margin-bottom: .7rem;
 }
+
 .mybag-orders table tr:nth-child(even) {
     background: rgb(240, 228, 228)
 }
 
-.mybag-orders table .table-data:hover{
+.mybag-orders table .table-data:hover {
     font-weight: 400;
     color: green;
 }
 
-.mybag-orders a .add-item{
+.mybag-orders a .add-item {
     margin-bottom: 1rem;
     float: right;
     color: green;
@@ -194,13 +199,13 @@ body {
     font-weight: bold;
 }
 
-.mybag-orders a .add-item:hover{
+.mybag-orders a .add-item:hover {
     color: #5cb85c;
     text-decoration: underline;
 }
 
 
-.mybag-bill{
+.mybag-bill {
     text-align: center;
     width: 30%;
     height: fit-content;
@@ -209,7 +214,7 @@ body {
     box-shadow: 2px 2px 5px grey;
 }
 
-.mybag-bill p{
+.mybag-bill p {
     font-size: 1rem;
     font-weight: 600;
     color: green;
@@ -217,14 +222,14 @@ body {
     margin-bottom: .5rem;
 }
 
-.mybag-bill table{
+.mybag-bill table {
     width: 100%;
 }
 
 /* ---------------------Checkout form design-------------------------- */
 .checkout {
     width: 90%;
-    margin: auto ;
+    margin: auto;
     padding-bottom: 20px;
 }
 
@@ -247,7 +252,8 @@ body {
     margin-bottom: 15px;
 }
 
-.checkout-form label, .checkout-form p {
+.checkout-form label,
+.checkout-form p {
     color: #9F1D22;
     font-size: 1.1rem;
     font-weight: 600;
@@ -275,7 +281,7 @@ body {
     flex-direction: row;
 }
 
-.bill{
+.bill {
     height: fit-content;
     width: 27%;
     padding: 1rem;
@@ -284,20 +290,23 @@ body {
     box-shadow: 2px 2px 2px grey;
 }
 
-.check-orders .title, .check-bill .title {
+.check-orders .title,
+.check-bill .title {
     font-size: 15px;
     color: green;
     font-weight: 600;
     text-decoration: underline;
 }
 
-.check-orders table, .check-bill table{
+.check-orders table,
+.check-bill table {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.check-orders table tr, .check-bill table tr{
+.check-orders table tr,
+.check-bill table tr {
     height: 2rem;
     font-size: 15px;
 
@@ -306,7 +315,8 @@ body {
 .check-orders table tr:hover {
     color: green;
 }
-.check-orders td i{
+
+.check-orders td i {
     color: red;
 }
 
@@ -314,4 +324,99 @@ body {
     font-size: 12px;
     text-align: justify;
     color: rgb(160, 155, 155);
+}
+
+/* -----------------My order design--------------------------- */
+.order-list {
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.order-list table {
+    width: 70%;
+    border: rgb(218, 208, 208) solid 1px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+.order-list table td {
+    text-align: center;
+}
+
+.order-list table tr:nth-child(even) {
+    background: rgb(240, 228, 228);
+}
+
+.order-heading {
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    margin-bottom: 5px;
+    color: #9F1D22;
+}
+
+.order-list .table-data:hover {
+    color: green;
+}
+
+.order-list table td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.order-list table th {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.order-list a span {
+    color: green;
+    font-size: .95rem;
+    font-weight: bold;
+}
+
+.order-list a .add-item {
+    margin-bottom: 1rem;
+    color: #9F1D22;
+}
+
+.order-list a span:hover {
+    text-decoration: underline;
+}
+
+/* ----------------------------Order form design------------------------------ */
+
+.order-form{
+    width: 70%;
+    margin: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    /* background-color: aquamarine; */
+}
+
+.order-heading{
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    margin-bottom: 1rem;
+    color: #9F1D22;
+    margin-left: 10%;
+    padding-top: 1rem;
+}
+
+.order-form .food-description{
+    color: grey;
+    font-size: 1rem;
+    margin-bottom: .7rem;
+}
+
+.order-form .food-name{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: .7rem;
+}
+
+.order-form .quantity{
+    width: 32%;
 }

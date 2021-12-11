@@ -101,3 +101,41 @@
     color: black;
     text-decoration: underline;
 }
+
+.cancel-btn {
+    background-color: #d9534f;
+    border: 1px solid #d9534f;
+    color: white;
+    padding: 5px 7px;
+    font-size: .8rem;
+    transition: 200ms;
+}
+
+.cancel-btn:hover {
+    background-color: #bb4844;
+    text-decoration: underline;
+}
+
+.status {
+    color: white;
+    background-color: #d49235;
+    padding: 5px 7px;
+    border-radius: 3px;
+    font-size: .8rem;
+    transition: 200ms;
+}
+
+.status:hover{
+    background-color: #c2852f;
+}
+
+.order-form .addbtn {
+    width: 18%;
+    margin-left: 7%;
+    cursor: pointer;
+    background-color: rgb(213, 216, 216);
+}
+
+.order-form .addbtn:hover {
+    background-color: black;
+}
