@@ -75,3 +75,29 @@
     border: #5cb85c 1px solid;
     text-decoration: underline;
 }
+
+.continue-btn{
+    float: right;
+    background-color: #00A145;
+    color: white;
+    border: 1px solid #00A145;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.continue-btn:hover{
+    background-color: #018038;
+    text-decoration: underline;
+}
+
+.back-btn {
+    background-color: black;
+    transition: 200ms;
+    color: white;
+}
+
+.back-btn:hover{
+    background-color: rgb(230, 224, 224);
+    color: black;
+    text-decoration: underline;
+}

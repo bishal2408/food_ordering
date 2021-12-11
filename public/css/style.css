@@ -219,3 +219,57 @@ body {
 .mybag-bill table{
     width: 100%;
 }
+
+/* ---------------------Checkout form design-------------------------- */
+.checkout {
+    width: 90%;
+    margin: auto ;
+    padding-bottom: 20px;
+}
+
+.checkout-form {
+    width: 60%;
+    margin-right: 3rem;
+}
+
+.checkout-heading {
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    /* color: rgb(167, 165, 165); */
+    color: #9F1D22;
+}
+
+.checkout hr {
+    border: 1px solid rgb(218, 213, 213);
+    margin-bottom: 15px;
+}
+
+.checkout-form label, .checkout-form p {
+    color: #9F1D22;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: .05rem;
+}
+
+.checkout-form p {
+    margin-bottom: 15px;
+}
+
+.checkout-form .input-field {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.checkout-form .radio-text {
+    color: black;
+    font-weight: 100;
+}
+
+.form-bill-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
