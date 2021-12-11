@@ -23,7 +23,13 @@ class OrderController extends Controller
             $total = $total + $order->price * $order->quantity;
         }
         $vat = 0.03 * $total;
-        $delivery_fee = 50;
+        $ordercount = count($orders);
+        if($ordercount == 0){
+            $delivery_fee = 0;
+        }
+        else {
+            $delivery_fee = 50; 
+        }
         return view('order.mybag', compact('orders', 'total', 'vat', 'delivery_fee'));
     }
 

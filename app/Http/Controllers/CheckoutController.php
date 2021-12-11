@@ -25,7 +25,7 @@ class CheckoutController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($user_id)
+    public function create($user_id, Request $request)
     {
         $orders = Order::all()->where('user_id', $user_id)->whereIn('on_order', 0);
         $total = 0;
@@ -33,7 +33,13 @@ class CheckoutController extends Controller
             $total = $total + $order->price * $order->quantity;
         }
         $vat = 0.03 * $total;
-        $delivery_fee = 50;
+        $ordercount = count($orders);
+        if($ordercount == 0){
+            $delivery_fee = 0;
+        }
+        else {
+            $delivery_fee = 50; 
+        }
         return view('order.checkoutform', compact('orders', 'total', 'vat', 'delivery_fee'));
     }
 
