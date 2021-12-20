@@ -5,6 +5,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\testController;
+
 
 
 /*
@@ -61,3 +63,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
+// Route::prefix('test')->group(function () {
+//     Route::get('/index', [testController::class, 'index'])->name('test.index');
+//     Route::get('/formDisplay', [testController::class, 'create'])->name('test.create');
+//     Route::post('/formStore', [testController::class, 'store'])->name('test.formStore');
+//     Route::get('/formEdit/{id}', [testController::class, 'edit'])->name('test.editform');
+//     Route::put('/formUpdate/{id}', [testController::class, 'update'])->name('test.update');
+//     Route::get('/delete/{id}', [testController::class, 'destroy'])->name('test.delete');
+// });

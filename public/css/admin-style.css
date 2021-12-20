@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ----------------------sidebar---------------------------- */
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 18%;
+    background: #0A2558;
+    transition: all 0.5s ease;
+}
+
+.sidebar .logo {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 15px;
+    margin-bottom: 21px;
+}
+
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease 0s;
+    color: white;
+    padding: 15px 5px;
+}
+
+/* .sidebar .nav-links li {
+    padding: 15px 25px;
+} */
+
+.sidebar .nav-links li i {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.sidebar .nav-links li:hover {
+    background-color: #091f46;
+}
+
+.nav-links .logout {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ----------------------------main container------------------------ */
+.main-container {
+    margin-left: 18%;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid rgb(218, 209, 209);
+}
+
+.navbar p {
+    font-size: 1.4rem;
+    color: rgb(56, 55, 55);
+    font-weight: 500;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    margin-right: 100px;
+    padding: 5px 10px;
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(224, 220, 220);
+}
+
+.nav-links li a.active {
+    background-color: #071e47;
+}
+
+/* --------------addfood container css------------------ */
+.main-container .add_food {
+    width: 100%;
+    padding: 25px 15px;
+}
+
+.add_food .foodbtn {
+    text-decoration: none;
+    color: white;
+    background-color: #0A2558;
+    border: 1px solid #0A2558;
+}
+
+.foodbtn:hover {
+    background-color: #091c41;
+}
+
+.add_food h3 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #0A2558;
+}
+
+.add_food .items {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    width: 80%;
+    margin: auto;
+    border: 1px solid rgb(224, 221, 221);
+    padding: 5px;
+}
+
+.add_food .food-title {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.items img {
+    width: 95px;
+    height: auto;
+    margin-right: 15px;
+}
+.items .food-info{
+    width: 60%;
+    margin-right: 20px;
+}
+.food-info .food-name{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.food-info .food-description{
+    color: rgb(63, 59, 59);
+}
+.food-info .food-price {
+    float: right;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.items .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.actions a{
+    font-size: 1rem;
+    color: blue;
+    text-decoration: none;
+}
+.actions a:hover{
+    text-decoration: underline;
+}
+/* 
+.added-items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+} */
