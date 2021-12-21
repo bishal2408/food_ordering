@@ -126,6 +126,6 @@ class OrderController extends Controller
         $order = Order::find($order_id);
         $order->approve = 1;
         $order->save();
-        return view('admin.home',compact('items', 'details'));
+        return redirect()->route('admin.home',compact('items', 'details'));
     }
 }
