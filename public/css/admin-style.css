@@ -53,6 +53,77 @@
     width: 100%;
 }
 
+
+/* ----------dropdown css----------------- */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    padding: 4px 5px;
+    display: none;
+    position: absolute;
+    background-color: #f7f7f7;
+    min-width: 224px;
+    min-height: auto;
+    overflow: auto;
+    right: 80px;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    z-index: 1;
+    top: 36px;
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    right: 0;
+}
+
+.show {
+    display: block;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.user-profile img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+
+.user-detail {
+    margin-top: 10px;
+}
+
+.user-detail .user-name{
+    font-size: 12px;
+    color: black;
+    font-weight: bold;
+}
+.user-detail .email{
+    color: grey;
+    font-size: 12px;
+}
+.dropdown-content .edit-profile {
+    color: #0A2558;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    border: none;
+}
+.dropdown-content .edit-profile:hover {
+    text-decoration: underline;
+}
 /* ----------------------------main container------------------------ */
 .main-container {
     margin-left: 18%;
@@ -169,9 +240,55 @@
 .actions a:hover{
     text-decoration: underline;
 }
-/* 
-.added-items {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
-} */
+
+/* -------------------order_list css--------------------- */
+
+.order_list {
+    width: 100%;
+    padding: 25px 15px;
+}
+
+.order_list h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #0A2558;
+    text-decoration: underline;
+}
+
+.order_list table{
+    width: 100%;
+    font-size: 1rem;
+    text-align: justify;
+    margin-top: 2rem;
+}
+.order_list table td{
+    padding: 10px 0px;
+    text-align: left;
+    padding-left: 5px;
+}
+.order_list table th{
+    padding: 10px 0px;
+}
+
+.order_list table tr:nth-child(even) {
+    background-color: #f1e7e7;
+}
+
+.order_list table td .direction {
+    color: rgb(58, 56, 56);
+}
+
+.order_list table td .approve{
+    color: rgb(4, 117, 4);
+    padding: 3px 10px;
+    background-color: rgb(229, 253, 229);
+    border: 1px solid rgb(4, 117, 4);
+    border-radius: 3px;
+    text-decoration: none;
+    transition: 200ms;
+}
+
+.order_list table td .approve:hover{
+    background-color: rgb(4, 117, 4);
+    color: white;
+}

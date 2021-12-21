@@ -36,6 +36,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/edit/{id}', [AdminController::class, 'edit'])->name('admin.edit');
     Route::put('/update/{id}', [AdminController::class, 'update'])->name('admin.update');
     Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
+
+    Route::get('/approveOrder/{order_id}', [OrderController::class, 'approveOrder'])->name('admin.approveOrder');
+    
 });
 
 

@@ -69,10 +69,16 @@
     <!-- custom css -->
     <link rel="stylesheet" href="{{ url('css/admin-style.css') }}">
     <link rel="stylesheet" href="{{ url('css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url('css/popupModel.css') }}">
+
 
     <!-- icon link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title>Admin page</title>
+
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -83,19 +89,19 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'dashboard')" id="defaultOpen">
+                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'dashboard')" >
                     <i class='bx bx-grid-alt'></i>
                     <span class="links-name">Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'addfood')">
+                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'addfood')" id="defaultOpen">
                     <i class='bx bx-plus'></i>
                     <span class="links-name">Add food</span>
                 </a>
             </li>
             <li>
-                <a href="javascript::void(0)"  class="tablinks" onclick="openTab(event, 'orderlist')">
+                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'orderlist')">
                     <i class='bx bx-list-ul'></i>
                     <span class="links-name">Order list</span>
                 </a>
@@ -116,10 +122,24 @@
     <div class="main-container">
         <div class="navbar">
             <p>Dashboard</p>
-            <a href="#">
-                <span class="links-name">Hello {{ Auth::user()->name }}!<i class="bx bx-chevron-down" style="margin-left: 20px;"></i></span>
-            </a>
+            <div class="dropdown">
+                <a href="javascript::void(0)" class="dropbtn user" onclick="myFunction()">
+                    <span class="links-name">Hello {{ Auth::user()->name }}!<i class="bx bx-chevron-down" style="margin-left: 20px;"></i></span>
+                </a>
+                <div id="myDropdown" class="dropdown-content">
+                    <div class="user-profile">
+                        <img src="{{ url('images/user-profile.jpg') }}">
+                        <div class="user-detail">
+                            <p class="user-name">{{ strtoupper(Auth::user()->name) }}</p>
+                            <p class="email">{{ Auth::user()->email }}</p>
+                        </div>
+                    </div>
+                    <a href="{{ url('/user/profile') }}" class="edit-profile">Edit profile</a>
+                </div>
+            </div>
+
         </div>
+
         <!-- dashboard -->
         <div id="dashboard" class="tabcontent">
             dashboard content
@@ -127,7 +147,43 @@
 
         <!-- add food division -->
         <div id="addfood" class="tabcontent add_food">
-            <a href="{{ route('admin.addfood') }}" class="btn foodbtn">Click here to add food!</a>
+            <!-- <a href="{{ route('admin.addfood') }}" class="btn foodbtn">Click here to add food!</a> -->
+            <a href="javascript::void(0)" id="myBtn" class="btn foodbtn">Click here to add food!</a>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p>Add food form</p>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('admin.store') }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <label class="formLabel" for="fname">Enter Food name</label> <br>
+                            <input class="formInput" type="text" id="fname" name="food_name" placeholder="Enter food name" required><br>
+
+                            <label class="formLabel" for="fdescription">Enter description</label> <br>
+                            <textarea class="formInput" id="fdescription" name="food_description" placeholder="Enter food description" required></textarea> <br>
+
+                            <label class="formLabel" for="fimage">Select image</label> <br>
+                            <input class="formInput" id="fimage" type="file" name="image" style="border: none;" required><br>
+
+                            <label class="formLabel" for="fprice">Enter Food price</label> <br>
+                            <input class="formInput" id="fprice" type="number" placeholder="Enter price" name="food_price" required><br>
+
+                            <p class="formLabel">Select food type</p>
+                            <input type="radio" name="food_type" id="normal" value="normal" style="margin-bottom: 6px;" checked>
+                            <label for="normal">Normal item</label> <br>
+                            <input type="radio" name="food_type" id="featured" value="featured" style="margin-bottom: 6px;">
+                            <label for="featured">featured item</label> <br>
+
+                            <button type="submit">Add now</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
             <h3>Added Items</h3>
             <p class="food-title">Featured item</p>
             @foreach($items as $item)
@@ -147,7 +203,6 @@
                         Delete <i class='bx bx-trash'></i>
                     </a>
                 </div>
-
             </div>
             @endif
             @endforeach
@@ -170,44 +225,42 @@
             </div>
             @endif
             @endforeach
-            <!-- <table>
-                <tr>
-                    <td><img src="{{url($item->food_photo_path)}}" alt="food-image" width="90" height="90"></td>
-                    <td>{{$item->food_name}} <br> <span>{{ $item->food_description }}</span></td>
-                    <td>
-                        <p> <b>NRs. {{ $item->food_price }}</b> </p>
-                    </td>
-                    <td>
-                        <a href="{{ route('admin.edit',['id'=>$item->id])}}"><button>Edit</button></a>
-                        <a href="{{ route('admin.delete',['id'=>$item->id])}}"><button>Delete</button></a>
-                    </td>
-                </tr>
-            </table> -->
         </div>
         <!-- order-list -->
         <div id="orderlist" class="tabcontent order_list">
-            <p>Approve the following orders: </p>
+            <h3>Order list</h3>
+            <table>
+                <tr>
+                    <th>Order id</th>
+                    <th>Product name</th>
+                    <th>User name</th>
+                    <th>Location</th>
+                    <th>Phone</th>
+                    <th>Action</th>
+                </tr>
+                @foreach ($details as $detail)
+                @if($detail->approve == 0)
+                <tr>
+                    <td>{{$detail->order_id}}</td>
+                    <td>{{ $detail->food_name }}</td>
+                    <td>{{ $detail->name }}</td>
+                    <td>
+                        {{ $detail->delivery_address }} <br>
+                        <span class="direction">({{ $detail->detailed_direction }})</span>
+                    </td>
+                    <td>{{ $detail->phone }}</td>
+                    <td>
+                        <a href="{{ route('admin.approveOrder', ['order_id'=>$detail->order_id]) }}" class="approve">Approve &#10003;</a>
+                    </td>
+                </tr>
+                @endif
+                @endforeach
+
+            </table>
         </div>
     </div>
 
-    <script>
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-    </script>
+    <script src="{{ url('js/index.js') }}"></script>
 </body>
 
 </html>

@@ -384,6 +384,22 @@ p {
 .order-list a span:hover {
     text-decoration: underline;
 }
+.order-list table .delivered{
+    background-color: #5cb85c;
+    color: white;
+    border: 1px solid #5cb85c;
+    border-radius: 3px;
+    padding: 3px 10px;
+    font-size: .8rem;
+}
+.order-list table .delivered:hover{
+    background-color: #459745;
+    color: white;
+    border: 1px solid #5cb85c;
+    border-radius: 3px;
+    padding: 3px 10px;
+    text-decoration: underline;
+}
 
 /* ----------------------------Order form design------------------------------ */
 

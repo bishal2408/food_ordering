@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('price');
             $table->integer('quantity');
             $table->boolean('on_order')->default(false);
+            $table->boolean('approve')->default(false);
         });
     }
 

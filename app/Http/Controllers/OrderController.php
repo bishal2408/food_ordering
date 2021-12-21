@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\Admin;
 use App\Models\Order;
@@ -112,5 +113,19 @@ class OrderController extends Controller
         $order = Order::find($id);
         $order->destroy($id);
         return redirect()->route('order.mybag', ['user_id' => $order->user_id]);
+    }
+
+    //function to approve the order by the admin
+    public function approveOrder($order_id){
+        $items = Admin::all();
+        $details = DB::table('orders')
+                ->join('checkouts', 'orders.id', '=', 'checkouts.order_id')
+                ->join('users', 'users.id', '=', 'orders.user_id')
+                ->where('orders.on_order','=',1)
+                ->get();
+        $order = Order::find($order_id);
+        $order->approve = 1;
+        $order->save();
+        return view('admin.home',compact('items', 'details'));
     }
 }

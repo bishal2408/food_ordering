@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use App\Models\Admin;
+use App\Models\Order;
+use App\Models\User;
+
 
 use Illuminate\Http\Request;
 
@@ -15,7 +19,13 @@ class AdminController extends Controller
     public function index()
     {
         $items = Admin::all();
-        return view('admin.home',compact('items'));
+        $details = DB::table('orders')
+                ->join('checkouts', 'orders.id', '=', 'checkouts.order_id')
+                ->join('users', 'users.id', '=', 'orders.user_id')
+                ->where('orders.on_order','=',1)
+                ->get();
+        // dd($details);
+        return view('admin.home',compact('items', 'details'));
     }
 
     /**
@@ -45,7 +55,7 @@ class AdminController extends Controller
         $admin->food_photo_path = 'images/'.$file_name;
         $admin->food_type = $request->food_type;
         $admin-> save();
-        return redirect()->route('admin.addfood');
+        return redirect()->route('admin.home');
     }
 
     /**

@@ -24,8 +24,13 @@ order form
             <td>{{ $order->price}}</td>
             <td>{{ $order->price * $order->quantity}}</td>
             <td>
+                @if ($order->approve == 0)
                 <a href="#" class="status"><button>Onprocess</button></a>
                 <a href="{{ route('order.cancelOrder', ['order_id' => $order->id]) }}"><button class="btn cancel-btn">Cancel Order</button></a>
+                @else
+                <a href="#" class="delivered"><button>Delivered!</button></a>
+                @endif
+                
             </td>
         </tr>
         @endforeach
