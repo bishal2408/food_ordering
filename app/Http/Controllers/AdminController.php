@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Admin;
 use App\Models\Order;
 use App\Models\User;
+use App\Models\Faq;
+
 
 
 use Illuminate\Http\Request;
@@ -18,6 +20,7 @@ class AdminController extends Controller
      */
     public function index()
     {
+        $faqs = Faq::all();
         $items = Admin::all();
         $details = DB::table('orders')
                 ->join('checkouts', 'orders.id', '=', 'checkouts.order_id')
@@ -25,7 +28,7 @@ class AdminController extends Controller
                 ->where('orders.on_order','=',1)
                 ->get();
         // dd($details);
-        return view('admin.home',compact('items', 'details'));
+        return view('admin.home',compact('items', 'details', 'faqs'));
     }
 
     /**

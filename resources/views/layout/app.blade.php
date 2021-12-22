@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
     <link rel="stylesheet" href="{{ url('css/layout.css') }}">
     <link rel="stylesheet" href="{{ url('css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url('css/extra.css') }}">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -81,7 +82,7 @@
                 <h3 class="footer-title">Get Help</h3>
                 <div class="footer-link">
                     <a href="" class="link">How to order?</a>
-                    <a href="" class="link">FAQs</a>
+                    <a href="{{ route('user.faq') }}" class="link">FAQs</a>
                     <a href="" class="link">Contact us</a>
                 </div>
             </div>

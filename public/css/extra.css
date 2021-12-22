@@ -1,0 +1,48 @@
+/* ----------------FAQs css------------------- */
+.userFaq {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.userFaq .faq-heading {
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    /* color: rgb(167, 165, 165); */
+    color: #9F1D22;
+}
+
+.userFaq hr {
+    border: 1px solid rgb(218, 213, 213);
+}
+
+.faq-content {
+    width: 80%;
+    background-color: #fff2f2;
+    margin: 1rem 0;
+}
+.collapse {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    margin-top: 1rem;
+    color: #9F1D22;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+.collapse p {
+    font-size: 1.3rem;
+}
+
+.collapse-content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    /* background-color: #fff2f2; */
+    width: 100%;
+}

@@ -1,64 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
-    <link rel="stylesheet" href="{{ url('css/admin-style.css') }}">
-</head>
-
-<body>
-    <div class="navbar">
-        <a href="{{url('/')}}">MERO KHAJAGHAR</a>
-        <div class="nav-links">
-            <a href="#">Hello {{ Auth::user()->name }}!</a>
-            <form action="{{ route('logout') }}" method="post">
-                @csrf
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" class="logout">Logout</a>
-            </form>
-        </div>
-    </div>
-
-    <a href="{{ route('admin.addfood') }}">add food</a>
-    <br>
-    <br>
-    <br>
-    <h2>Featured items</h2>
-    <div class="added-items">
-        @foreach($items as $item)
-        @if($item->food_type == 'featured')
-        <div class="product">
-            <img src="{{url($item->food_photo_path)}}" alt="food-image" width="200" height="200">
-            <h3>{{$item->food_name}}</h3>
-            <p>{{ $item->food_description }}</p>
-            <p> <b>NRs. {{ $item->food_price }}</b> </p>
-            <a href="{{ route('admin.edit',['id'=>$item->id])}}"><button>Edit</button></a>
-            <a href="{{ route('admin.delete',['id'=>$item->id])}}"><button>Delete</button></a>
-        </div>
-        @endif
-        @endforeach
-    </div>
-    <h2>Added items</h2>
-    <div class="added-items">
-        @foreach($items as $item)
-        @if($item->food_type == 'normal')
-        <div class="product">
-            <img src="{{url($item->food_photo_path)}}" alt="food-image" width="200" height="200">
-            <h3>{{$item->food_name}}</h3>
-            <p>{{ $item->food_description }}</p>
-            <p> <b>NRs. {{ $item->food_price }}</b> </p>
-            <a href="{{ route('admin.edit',['id'=>$item->id])}}"><button>Edit</button></a>
-            <a href="{{ route('admin.delete',['id'=>$item->id])}}"><button>Delete</button></a>
-        </div>
-        @endif
-        @endforeach
-    </div>
-</body>
-
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,7 +28,7 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'dashboard')" >
+                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'dashboard')">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links-name">Dashboard</span>
                 </a>
@@ -104,6 +43,12 @@
                 <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'orderlist')">
                     <i class='bx bx-list-ul'></i>
                     <span class="links-name">Order list</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'faq')">
+                    <i class='bx bx-message-alt-dots'></i>
+                    <span class="links-name">FAQs</span>
                 </a>
             </li>
 
@@ -258,9 +203,42 @@
 
             </table>
         </div>
+        <!-- FAQ -->
+        <div id="faq" class="tabcontent faq-container">
+            <a href="javascript::void(0)" id="myBtn2" class="btn foodbtn"> Add FAQs</a> <br>
+            <!-- The Modal -->
+            <div id="myModal2" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p>Add FAQ form</p>
+                        <span class="close2">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('faq.store') }}" method="post">
+                            @csrf
+                            <label class="formLabel" for="question">Enter Question</label><br>
+                            <input class="formInput" type="text" name="faq_question" id="question" placeholder="Enter the question here" required><br>
+
+                            <label class="formLabel" for="answer">Enter answer</label> <br>
+                            <textarea class="formInput" name="faq_answer" id="answer" required></textarea>
+                            <button type="submit">Add FAQ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            @foreach ($faqs as $faq)
+            <div class="faq-content">
+                <button class="collapse"> <p>{{ $faq->faq_question }} </p> <a href="{{ route('faq.delete', ['id'=>$faq->id]) }}" class="bx bx-trash"></a></button>
+                <div class="collapse-content">
+                    <p> {{ $faq->faq_answer }} </p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
     </div>
 
-    <script src="{{ url('js/index.js') }}"></script>
+    <script src="{{ url('js/admin-index.js') }}"></script>
 </body>
 
 </html>

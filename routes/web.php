@@ -5,7 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\testController;
+use App\Http\Controllers\FaqController;
 
 
 
@@ -39,6 +39,10 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
     Route::get('/approveOrder/{order_id}', [OrderController::class, 'approveOrder'])->name('admin.approveOrder');
     
+    Route::post('/faqStore', [FaqController::class, 'store'])->name('faq.store');
+    Route::get('/faqDelete/{id}', [FaqController::class, 'destroy'])->name('faq.delete');
+
+    
 });
 
 
@@ -60,6 +64,10 @@ Route::middleware('auth')->prefix('order')->group(function () {
     
 });
 
+
+Route::middleware('auth')->prefix('user')->group(function () {
+    Route::get('/faq', [FaqController::class, 'index'])->name('user.faq');
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

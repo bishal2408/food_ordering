@@ -105,15 +105,17 @@
     margin-top: 10px;
 }
 
-.user-detail .user-name{
+.user-detail .user-name {
     font-size: 12px;
     color: black;
     font-weight: bold;
 }
-.user-detail .email{
+
+.user-detail .email {
     color: grey;
     font-size: 12px;
 }
+
 .dropdown-content .edit-profile {
     color: #0A2558;
     padding: 0;
@@ -121,9 +123,11 @@
     text-align: center;
     border: none;
 }
+
 .dropdown-content .edit-profile:hover {
     text-decoration: underline;
 }
+
 /* ----------------------------main container------------------------ */
 .main-container {
     margin-left: 18%;
@@ -162,12 +166,14 @@
 }
 
 /* --------------addfood container css------------------ */
-.main-container .add_food {
+.main-container .add_food,
+.faq-container {
     width: 100%;
     padding: 25px 15px;
 }
 
-.add_food .foodbtn {
+.add_food .foodbtn,
+.faq-container .foodbtn {
     text-decoration: none;
     color: white;
     background-color: #0A2558;
@@ -209,18 +215,21 @@
     height: auto;
     margin-right: 15px;
 }
-.items .food-info{
+
+.items .food-info {
     width: 60%;
     margin-right: 20px;
 }
-.food-info .food-name{
+
+.food-info .food-name {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.food-info .food-description{
+.food-info .food-description {
     color: rgb(63, 59, 59);
 }
+
 .food-info .food-price {
     float: right;
     font-style: italic;
@@ -232,12 +241,14 @@
     flex-direction: row;
     align-items: center;
 }
-.actions a{
+
+.actions a {
     font-size: 1rem;
     color: blue;
     text-decoration: none;
 }
-.actions a:hover{
+
+.actions a:hover {
     text-decoration: underline;
 }
 
@@ -255,18 +266,20 @@
     text-decoration: underline;
 }
 
-.order_list table{
+.order_list table {
     width: 100%;
     font-size: 1rem;
     text-align: justify;
     margin-top: 2rem;
 }
-.order_list table td{
+
+.order_list table td {
     padding: 10px 0px;
     text-align: left;
     padding-left: 5px;
 }
-.order_list table th{
+
+.order_list table th {
     padding: 10px 0px;
 }
 
@@ -278,7 +291,7 @@
     color: rgb(58, 56, 56);
 }
 
-.order_list table td .approve{
+.order_list table td .approve {
     color: rgb(4, 117, 4);
     padding: 3px 10px;
     background-color: rgb(229, 253, 229);
@@ -288,7 +301,42 @@
     transition: 200ms;
 }
 
-.order_list table td .approve:hover{
+.order_list table td .approve:hover {
     background-color: rgb(4, 117, 4);
     color: white;
+}
+
+/* --------------------------------faq-container css ------------------ */
+.faq-content {
+    width: 60%;
+}
+
+.collapse {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-top: 1rem;
+    /* font-weight: bold; */
+    font-size: 1.2rem;
+    color: #0A2558;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.collapse a {
+    font-size: 1.4rem;
+    color: rgb(209, 51, 51);
+    text-decoration: none;
+}
+.collapse-content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    width: 100%;
 }

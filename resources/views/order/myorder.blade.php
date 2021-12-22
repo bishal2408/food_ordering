@@ -29,6 +29,7 @@ order form
                 <a href="{{ route('order.cancelOrder', ['order_id' => $order->id]) }}"><button class="btn cancel-btn">Cancel Order</button></a>
                 @else
                 <a href="#" class="delivered"><button>Delivered!</button></a>
+                <a href="{{ route('order.cancelOrder', ['order_id' => $order->id]) }}"><button class="btn cancel-btn">Clear </button></a>
                 @endif
                 
             </td>
