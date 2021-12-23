@@ -1,20 +1,20 @@
-.modal {
+.mmodal {
     display: none;
     position: fixed;
     z-index: 1;
     padding-top: 100px;
-    left: 1%;
-    bottom: 7%;
+    left: 6%;
+    bottom: 10%;
     width: 100%;
     height: 100%;
 }
 
-.faq-container .modal {
+.faq-container .mmodal {
     width: 80%;
     left: 13%;
 }
 
-.modal-content {
+.mmodal-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
@@ -55,14 +55,14 @@
 }
 
 /* The Close Button */
-.close, .close2 {
+.close1, .close2 {
     color: white;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close1:hover,
+.close1:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -73,34 +73,39 @@
     text-decoration: none;
     cursor: pointer;
 }
-.modal-header {
+.mmodal-header {
     display: flex;
     flex-direction: row;
-    padding: 2px 18px;
+    padding: 0px 13px;
     background-color: #0d3174;
     color: white;
     align-items: center;
     justify-content: space-between;
+    height: 50px;
 }
 
-.modal-body {
+.mmodal-header p {
+    padding-top: 1rem;
+}
+
+.mmodal-body {
     padding: 10px 15px;
 }
 
-.modal-body form .formInput, .modal-body form textarea {
+.mmodal-body form .formInput, .mmodal-body form textarea {
     width: 100%;
     padding: 10px 5px;
     margin-bottom: 6px;
     border: 1px solid grey;
 }
 
-.modal-body form .formLabel {
+.mmodal-body form .formLabel {
     font-size: 1.2rem;
     color: #0A2558;
 
 }
 
-.modal-body form button {
+.mmodal-body form button {
     padding: 5px 15px;
     background-color: #0A2558;
     border-radius: 3px;
@@ -109,6 +114,55 @@
     color: white;
     margin-top: 1rem;
 }
-.modal-body form button:hover {
+.mmodal-body form button:hover {
     background-color: #0d3174;
+}
+
+
+
+
+.editFood form .formInput, .editFood form textarea {
+    width: 100%;
+    padding: 10px 5px;
+    margin-bottom: 6px;
+    border: 1px solid grey;
+}
+
+.editFood form .formLabel {
+    font-size: 1.2rem;
+    color: #0A2558;
+
+}
+
+.editFood form button {
+    padding: 5px 15px;
+    background-color: #0A2558;
+    border-radius: 3px;
+    border: 1px solid #0A2558;
+    cursor: pointer;
+    color: white;
+    margin-top: 1rem;
+}
+.editFood form button:hover {
+    background-color: #0d3174;
+}
+
+.editFood .modal-header {
+    background-color: #0d3174;
+    color: white;
+    padding: 0 15px;
+    height: 50px;
+}
+.editFood .modal-header button {
+    padding: 0;
+    margin-bottom: 1rem;
+    background-color: #0d3174;
+    border: none;
+    font-size: 28px;
+    font-weight: bolder;
+    padding: 0px 5px;
+}
+
+.editFood .modal-header button:hover {
+    color: black;
 }

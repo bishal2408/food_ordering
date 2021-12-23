@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="{{ url('css/admin-style.css') }}">
     <link rel="stylesheet" href="{{ url('css/layout.css') }}">
     <link rel="stylesheet" href="{{ url('css/popupModel.css') }}">
-
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- icon link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title>Admin page</title>
@@ -26,27 +25,27 @@
         <div class="logo">
             <span class="logo-name">Mero khajaghar</span>
         </div>
-        <ul class="nav-links">
+        <ul class="navCustom-links">
             <li>
-                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'dashboard')">
+                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'Dashboard')">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links-name">Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'addfood')" id="defaultOpen">
+                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'Addfood')" id="defaultOpen">
                     <i class='bx bx-plus'></i>
                     <span class="links-name">Add food</span>
                 </a>
             </li>
             <li>
-                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'orderlist')">
+                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'Orderlist')">
                     <i class='bx bx-list-ul'></i>
                     <span class="links-name">Order list</span>
                 </a>
             </li>
             <li>
-                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'faq')">
+                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'FAQs')">
                     <i class='bx bx-message-alt-dots'></i>
                     <span class="links-name">FAQs</span>
                 </a>
@@ -65,9 +64,9 @@
 
     <!-- main container -->
     <div class="main-container">
-        <div class="navbar">
-            <p>Dashboard</p>
-            <div class="dropdown">
+        <div class="navbarCustom">
+            <p id="navbar-title">Dashboard</p>
+            <div class="dropDown">
                 <a href="javascript::void(0)" class="dropbtn user" onclick="myFunction()">
                     <span class="links-name">Hello {{ Auth::user()->name }}!<i class="bx bx-chevron-down" style="margin-left: 20px;"></i></span>
                 </a>
@@ -86,48 +85,15 @@
         </div>
 
         <!-- dashboard -->
-        <div id="dashboard" class="tabcontent">
+        <div id="Dashboard" class="tabcontent">
             dashboard content
         </div>
 
         <!-- add food division -->
-        <div id="addfood" class="tabcontent add_food">
+        <div id="Addfood" class="tabcontent add_food">
             <!-- <a href="{{ route('admin.addfood') }}" class="btn foodbtn">Click here to add food!</a> -->
-            <a href="javascript::void(0)" id="myBtn" class="btn foodbtn">Click here to add food!</a>
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <p>Add food form</p>
-                        <span class="close">&times;</span>
-                    </div>
-                    <div class="modal-body">
-                        <form action="{{ route('admin.store') }}" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <label class="formLabel" for="fname">Enter Food name</label> <br>
-                            <input class="formInput" type="text" id="fname" name="food_name" placeholder="Enter food name" required><br>
-
-                            <label class="formLabel" for="fdescription">Enter description</label> <br>
-                            <textarea class="formInput" id="fdescription" name="food_description" placeholder="Enter food description" required></textarea> <br>
-
-                            <label class="formLabel" for="fimage">Select image</label> <br>
-                            <input class="formInput" id="fimage" type="file" name="image" style="border: none;" required><br>
-
-                            <label class="formLabel" for="fprice">Enter Food price</label> <br>
-                            <input class="formInput" id="fprice" type="number" placeholder="Enter price" name="food_price" required><br>
-
-                            <p class="formLabel">Select food type</p>
-                            <input type="radio" name="food_type" id="normal" value="normal" style="margin-bottom: 6px;" checked>
-                            <label for="normal">Normal item</label> <br>
-                            <input type="radio" name="food_type" id="featured" value="featured" style="margin-bottom: 6px;">
-                            <label for="featured">featured item</label> <br>
-
-                            <button type="submit">Add now</button>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
+            <a href="javascript::void(0)" id="myBtn" class="btnCustom foodbtn">Click here to add food!</a>
+            @include('admin.create')
 
             <h3>Added Items</h3>
             <p class="food-title">Featured item</p>
@@ -141,9 +107,13 @@
                     <p class="food-price">NRs. {{ $item->food_price }}</p>
                 </div>
                 <div class="actions">
-                    <a href="{{ route('admin.edit',['id'=>$item->id])}}" style="margin-right: 15px;color: green;">
+                    <!-- <a href="{{ route('admin.edit',['id'=>$item->id])}}" style="margin-right: 15px;color: green;">
+                        Edit <i class='bx bx-edit-alt'></i>
+                    </a> -->
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#ModalEdit{{$item->id}}" style="margin-right: 15px;color: green;">
                         Edit <i class='bx bx-edit-alt'></i>
                     </a>
+                    @include('admin.edit')
                     <a href="{{ route('admin.delete',['id'=>$item->id])}}" style="color: red;">
                         Delete <i class='bx bx-trash'></i>
                     </a>
@@ -163,7 +133,11 @@
                     <p class="food-price">NRs. {{ $item->food_price }}</p>
                 </div>
                 <div class="actions">
-                    <a href="{{ route('admin.edit',['id'=>$item->id])}}" style="margin-right: 15px;color: green;">Edit <i class='bx bx-edit-alt'></i></a>
+                    <!-- <a href="{{ route('admin.edit',['id'=>$item->id])}}" style="margin-right: 15px;color: green;">Edit <i class='bx bx-edit-alt'></i></a> -->
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#ModalEdit{{$item->id}}" style="margin-right: 15px;color: green;">
+                        Edit <i class='bx bx-edit-alt'></i>
+                    </a>
+                    @include('admin.edit')
                     <a href="{{ route('admin.delete',['id'=>$item->id])}}" style="color: red;">Delete <i class='bx bx-trash'></i></a>
                 </div>
 
@@ -172,7 +146,7 @@
             @endforeach
         </div>
         <!-- order-list -->
-        <div id="orderlist" class="tabcontent order_list">
+        <div id="Orderlist" class="tabcontent order_list">
             <h3>Order list</h3>
             <table>
                 <tr>
@@ -204,16 +178,16 @@
             </table>
         </div>
         <!-- FAQ -->
-        <div id="faq" class="tabcontent faq-container">
-            <a href="javascript::void(0)" id="myBtn2" class="btn foodbtn"> Add FAQs</a> <br>
+        <div id="FAQs" class="tabcontent faq-container">
+            <a href="javascript::void(0)" id="myBtn2" class="btnCustom foodbtn"> Add FAQs</a> <br>
             <!-- The Modal -->
-            <div id="myModal2" class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
+            <div id="myModal2" class="mmodal">
+                <div class="mmodal-content">
+                    <div class="mmodal-header">
                         <p>Add FAQ form</p>
                         <span class="close2">&times;</span>
                     </div>
-                    <div class="modal-body">
+                    <div class="mmodal-body">
                         <form action="{{ route('faq.store') }}" method="post">
                             @csrf
                             <label class="formLabel" for="question">Enter Question</label><br>
@@ -228,7 +202,7 @@
             </div>
             @foreach ($faqs as $faq)
             <div class="faq-content">
-                <button class="collapse"> <p>{{ $faq->faq_question }} </p> <a href="{{ route('faq.delete', ['id'=>$faq->id]) }}" class="bx bx-trash"></a></button>
+                <button class="ccollapse"> <p>{{ $faq->faq_question }} </p> <a href="{{ route('faq.delete', ['id'=>$faq->id]) }}" class="bx bx-trash"></a></button>
                 <div class="collapse-content">
                     <p> {{ $faq->faq_answer }} </p>
                 </div>
@@ -239,6 +213,7 @@
     </div>
 
     <script src="{{ url('js/admin-index.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>

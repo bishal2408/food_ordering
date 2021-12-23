@@ -25,7 +25,7 @@
     margin-bottom: 21px;
 }
 
-.sidebar .nav-links li a {
+.sidebar .navCustom-links li a {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -34,20 +34,21 @@
     padding: 15px 5px;
 }
 
-/* .sidebar .nav-links li {
-    padding: 15px 25px;
-} */
+.sidebar .navCustom-links li {
+    list-style-type: none;
+    margin-left: -2rem;
+}
 
-.sidebar .nav-links li i {
+.sidebar .navCustom-links li i {
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
-.sidebar .nav-links li:hover {
+.sidebar .navCustom-links li:hover {
     background-color: #091f46;
 }
 
-.nav-links .logout {
+.navCustom-links .logout {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -56,7 +57,7 @@
 
 /* ----------dropdown css----------------- */
 
-.dropdown {
+.dropDown {
     position: relative;
     display: inline-block;
 }
@@ -133,25 +134,24 @@
     margin-left: 18%;
 }
 
-.navbar {
+.navbarCustom {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 20px;
     width: 100%;
-    padding: 15px 20px;
+    padding-left: 25px;
     border: 1px solid rgb(218, 209, 209);
 }
 
-.navbar p {
+.navbarCustom p {
     font-size: 1.4rem;
     color: rgb(56, 55, 55);
-    font-weight: 500;
+    font-weight: 400;
+    padding-top: 1rem;
 }
 
-.navbar a {
+.navbarCustom a {
     text-decoration: none;
     color: black;
     border: 1px solid black;
@@ -161,7 +161,7 @@
     border: 1px solid rgb(224, 220, 220);
 }
 
-.nav-links li a.active {
+.navCustom-links li a.active {
     background-color: #071e47;
 }
 
@@ -252,6 +252,9 @@
     text-decoration: underline;
 }
 
+
+
+
 /* -------------------order_list css--------------------- */
 
 .order_list {
@@ -311,7 +314,7 @@
     width: 60%;
 }
 
-.collapse {
+.ccollapse {
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -327,10 +330,14 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.collapse a {
+.ccollapse a {
     font-size: 1.4rem;
     color: rgb(209, 51, 51);
     text-decoration: none;
+}
+.ccollapse a:hover {
+    color: rgb(209, 51, 51);
+    text-decoration: underline;
 }
 .collapse-content {
     padding: 0 18px;

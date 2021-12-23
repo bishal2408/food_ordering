@@ -22,7 +22,7 @@ window.onclick = function (event) {
 // Get the modal for add food form
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("close1")[0];
 btn.onclick = function () {
     modal.style.display = "block";
 }
@@ -34,6 +34,7 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
 // get the modal for add faq form
 var modal2 = document.getElementById("myModal2");
 var btn2 = document.getElementById("myBtn2");
@@ -55,6 +56,7 @@ window.onclick = function (event) {
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
+    document.getElementById("navbar-title").innerHTML = tabName;
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
@@ -71,7 +73,7 @@ document.getElementById("defaultOpen").click();
 
 
 // collapse javascript
-var coll = document.getElementsByClassName("collapse");
+var coll = document.getElementsByClassName("ccollapse");
 var i;
 
 for (i = 0; i < coll.length; i++) {
