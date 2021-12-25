@@ -9,14 +9,11 @@
     <link rel="stylesheet" href="{{ url('css/admin-style.css') }}">
     <link rel="stylesheet" href="{{ url('css/layout.css') }}">
     <link rel="stylesheet" href="{{ url('css/popupModel.css') }}">
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- icon link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title>Admin page</title>
-
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -48,6 +45,12 @@
                 <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'FAQs')">
                     <i class='bx bx-message-alt-dots'></i>
                     <span class="links-name">FAQs</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript::void(0)" class="tablinks" onclick="openTab(event, 'Enquiry')">
+                    <i class='bx bxs-message-alt-error'></i>
+                    <span class="links-name">Enquiry</span>
                 </a>
             </li>
 
@@ -202,12 +205,40 @@
             </div>
             @foreach ($faqs as $faq)
             <div class="faq-content">
-                <button class="ccollapse"> <p>{{ $faq->faq_question }} </p> <a href="{{ route('faq.delete', ['id'=>$faq->id]) }}" class="bx bx-trash"></a></button>
+                <button class="ccollapse">
+                    <p>{{ $faq->faq_question }} </p> <a href="{{ route('faq.delete', ['id'=>$faq->id]) }}" class="bx bx-trash"></a>
+                </button>
                 <div class="collapse-content">
                     <p> {{ $faq->faq_answer }} </p>
                 </div>
             </div>
             @endforeach
+        </div>
+        <div id="Enquiry" class="tabcontent userEnquiry">
+            <p>Following users sent their enquiries. Please check it and repond to them: </p>
+            <table>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>User enquiry</th>
+                    <th>Action</th>
+                </tr>
+                @foreach ($contacts as $contact)
+                <tr>
+                    <td>{{ $contact->name }}</td>
+                    <td>{{ $contact->email }}</td>
+                    <td class="enquiryData">{{ $contact->enquiry }}</td>
+                    <td>
+                        <a href="#" style="margin-right: 10px;">
+                            Reply<i class='bx bx-reply'></i>
+                        </a>
+                        <a href="{{ route('admin.deleteEnquiry', ['id'=>$contact->id]) }}" style="color: red;">
+                            Delete<i class="bx bx-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                @endforeach
+            </table>
         </div>
 
     </div>

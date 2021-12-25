@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Admin;
-use App\Models\Order;
+use App\Models\Contact;
 use App\Models\User;
 use App\Models\Faq;
 
@@ -22,13 +22,14 @@ class AdminController extends Controller
     {
         $faqs = Faq::all();
         $items = Admin::all();
+        $contacts = Contact::all();
         $details = DB::table('orders')
                 ->join('checkouts', 'orders.id', '=', 'checkouts.order_id')
                 ->join('users', 'users.id', '=', 'orders.user_id')
                 ->where('orders.on_order','=',1)
                 ->get();
         // dd($details);
-        return view('admin.home',compact('items', 'details', 'faqs'));
+        return view('admin.home',compact('items', 'details', 'faqs', 'contacts'));
     }
 
     /**
@@ -113,5 +114,10 @@ class AdminController extends Controller
     {
         Admin::destroy($id);
         return redirect()->route('admin.home'); 
+    }
+
+    public function deleteEnquiry($id){
+        Contact::destroy($id);
+        return redirect()->route('admin.home');
     }
 }

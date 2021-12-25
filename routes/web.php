@@ -41,6 +41,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     
     Route::post('/faqStore', [FaqController::class, 'store'])->name('faq.store');
     Route::get('/faqDelete/{id}', [FaqController::class, 'destroy'])->name('faq.delete');
+    Route::get('/deleteEnquiry/{id}', [AdminController::class, 'deleteEnquiry'])->name('admin.deleteEnquiry');
 
     
 });
