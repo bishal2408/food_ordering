@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Faq;
+use App\Models\Contact;
+
 
 class FaqController extends Controller
 {
@@ -18,6 +20,10 @@ class FaqController extends Controller
         return view('extra.faq', compact('faqs'));
     }
 
+
+    public function contactIndex(){
+        return view('extra.contactIndex');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -41,6 +47,15 @@ class FaqController extends Controller
         $faq->faq_answer = $request->faq_answer;
         $faq->save();
         return redirect()->route('admin.home');
+    }
+
+    public function storeEnquiry(Request $request){
+        $enquiry = new Contact();
+        $enquiry->name = $request->name;
+        $enquiry->email = $request->email;
+        $enquiry->enquiry = $request->enquiry;
+        $enquiry->save();
+        return redirect()->route('user.contactUs');
     }
 
     /**

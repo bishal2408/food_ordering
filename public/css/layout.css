@@ -146,3 +146,16 @@
 .order-form .addbtn:hover {
     background-color: black;
 }
+
+.contactBtn {
+    width: 65%;
+    margin-top: 1rem;
+    background-color: #00A145;
+    color: white;
+    border: 1px solid #00A145;
+    cursor: pointer;
+}
+
+.contactBtn:hover{
+    background-color: #039241;
+}

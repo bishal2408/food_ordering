@@ -83,7 +83,7 @@
                 <div class="footer-link">
                     <a href="" class="link">How to order?</a>
                     <a href="{{ route('user.faq') }}" class="link">FAQs</a>
-                    <a href="" class="link">Contact us</a>
+                    <a href="{{ route('user.contactUs') }}" class="link">Contact us</a>
                 </div>
             </div>
             <div class="useful-card">

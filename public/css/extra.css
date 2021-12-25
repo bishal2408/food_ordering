@@ -64,4 +64,56 @@
     width: 100%;
 }
 
-/* ---------------About us page css----------------------------- */
+/* ---------------Coontact us page css----------------------------- */
+
+.contactUs {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.contactUs .contact-heading {
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    /* color: rgb(167, 165, 165); */
+    color: #9F1D22;
+}
+
+.contactUs hr {
+    border: 1px solid rgb(218, 213, 213);
+}
+.contactUs form {
+    padding-left: 8px;
+}
+.enquiry-detail{
+    width: 66%;
+    display: flex;
+    flex-direction: row;
+    /* background-color: aquamarine; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.inputName, .inputEmail {
+    width: 50%;
+    margin-right: 1rem;
+}
+
+.inputName input, .inputEmail input{
+    width: 100%;
+    margin-top: 1.2rem;
+}
+
+.contactUs form textarea {
+    width: 65%;
+    margin-top: 1.2rem;
+    min-height: 130px;
+}
+.contactUs p{
+    margin-top: 2rem;
+}
+
+.contactUs label {
+    color: #9F1D22;
+}

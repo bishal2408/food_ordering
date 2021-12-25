@@ -65,9 +65,11 @@ Route::middleware('auth')->prefix('order')->group(function () {
 });
 
 
-Route::middleware('auth')->prefix('user')->group(function () {
+Route::prefix('user')->group(function () {
     Route::get('/faq', [FaqController::class, 'index'])->name('user.faq');
     Route::get('/AboutUs', function(){return view('extra.aboutUs');})->name('user.aboutUs');
+    Route::get('/contactUs', [FaqController::class, 'contactIndex'])->name('user.contactUs');
+    Route::post('/storeEnquiry', [FaqController::class, 'storeEnquiry'])->name('user.storeEnquiry');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
