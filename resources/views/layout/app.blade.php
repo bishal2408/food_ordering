@@ -75,7 +75,7 @@
                 <h3 class="footer-title">Mero Khajaghar</h3>
                 <p>
                     Khajaghar is the fastest, easiest and most convenient way to enjoy the best food of your
-                    favourite restaurants wherever you want to. <a href="" style="color: #0275d8;">Click here!</a> to know more
+                    favourite restaurants wherever you want to. <a href="{{ route('user.aboutUs') }}" style="color: #0275d8;">Click here!</a> to know more
                 </p>
             </div>
             <div class="help-card">
@@ -89,7 +89,7 @@
             <div class="useful-card">
                 <h3 class="footer-title">Useful links</h3>
                 <div class="footer-link">
-                    <a href="" class="link">About Us</a>
+                    <a href="{{ route('user.aboutUs') }}" class="link">About Us</a>
                     <a href="" class="link">Available Areas</a>
                     <a href="" class="link">Delivery Charges</a>
                 </div>

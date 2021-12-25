@@ -67,6 +67,7 @@ Route::middleware('auth')->prefix('order')->group(function () {
 
 Route::middleware('auth')->prefix('user')->group(function () {
     Route::get('/faq', [FaqController::class, 'index'])->name('user.faq');
+    Route::get('/AboutUs', function(){return view('extra.aboutUs');})->name('user.aboutUs');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

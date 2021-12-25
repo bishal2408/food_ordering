@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-order form
+Orders
 @endsection
 
 @section('content')

@@ -60,9 +60,9 @@ Home page
             Khajaghar is the fastest, easiest and most convenient way to enjoy the best food of your favourite restaurants at home, at the office or wherever you want to.
         </p>
         <p>
-            We know that your time is valuable and sometimes every minute in the day counts. That’s why we deliver! So you can spend more time doing the things you love.
+            We know that your time is valuable and sometimes every minute in the day counts. That's why we deliver! So you can spend more time doing the things you love.
         </p>
-        <button class="btn aboutbtn">Learn more</button>
+        <a href="{{ route('user.aboutUs') }}" class="btn aboutbtn">Learn more</a>
     </div>
 </div>
 @endsection

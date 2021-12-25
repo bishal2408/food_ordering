@@ -1,19 +1,22 @@
 @extends('layout.app')
 
 @section('title')
-order form
+Edit order
 @endsection
 
 @section('content')
-    <h4>Edit {{ $order->food_name }}</h4>
-    <img src="{{url($food->food_photo_path)}}" alt="food-image" width="200" height="200">
-    <h3>{{$order->food_name}}</h3>
-    <p>{{ $food->food_description }}</p>
+
+<p class="order-heading">Your order form</p>
+<div class="order-form">
+    <img src="{{url($food->food_photo_path)}}" alt="food-image" width="300" height="400">
+    <p class="food-name">{{$order->food_name}} </p>
+    <p class="food-description">{{ $food->food_description }}</p>
     <p> <b>NRs. {{ $order->price }} per item</b> </p>
-    <form action="{{route('order.update',['id'=>$order->id])}}" method="POST">
+    <form action="{{route('order.update',['id'=>$order->id])}}"  method="POST">
         @method('PUT')
         @csrf
-        <input type="number" name="quantity" placeholder="Enter quantity" required>
-        <input type="submit" value="Update your order">
+        <input class="quantity" type="number" name="quantity" placeholder="Enter quantity" required> <br>
+        <input type="submit" value="Update your order" class="btn addbtn">
     </form>
+</div>
 @endsection

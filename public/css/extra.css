@@ -1,11 +1,14 @@
-/* ----------------FAQs css------------------- */
-.userFaq {
+/* ----------------FAQs and AboutUs css------------------- */
+.userFaq, .aboutUs {
     width: 90%;
     margin: auto;
     padding-bottom: 20px;
 }
+.aboutUs{
+    width: 80%;
+}
 
-.userFaq .faq-heading {
+.userFaq .faq-heading, .aboutUs .about-heading {
     font-size: 2rem;
     letter-spacing: .1rem;
     margin-top: 30px;
@@ -14,7 +17,7 @@
     color: #9F1D22;
 }
 
-.userFaq hr {
+.userFaq hr, .aboutUs hr {
     border: 1px solid rgb(218, 213, 213);
 }
 
@@ -23,6 +26,20 @@
     background-color: #fff2f2;
     margin: 1rem 0;
 }
+
+ .about-content {
+    width: 80%;
+    margin: auto;
+    background-color: #fff2f2;
+    text-align: justify;
+}
+
+.about-content p {
+    word-spacing: .2rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
 .collapse {
     cursor: pointer;
     width: 100%;
@@ -46,3 +63,5 @@
     /* background-color: #fff2f2; */
     width: 100%;
 }
+
+/* ---------------About us page css----------------------------- */
